@@ -1,0 +1,15 @@
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+      <a routerLink="/" class="navbar-brand" [appFocus]="hasFocus(0, 0)">Home</a>
+      <a routerLink="/history" [appFocus]="hasFocus(1, 0)">History</a>
+  </nav>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-inline">
+        <li class="list-inline-item" *ngFor="let movie of movies; let i = index">
+          <app-video-item [movie]="movie" [focus]="hasFocus(i, 1)" (onMovieClick)="play($event)"></app-video-item>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

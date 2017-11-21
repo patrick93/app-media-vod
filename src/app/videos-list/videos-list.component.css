@@ -1,0 +1,12 @@
+.list-inline {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.list-inline-item {
+  width: 214px;
+}
+
+.navbar {
+  margin-bottom: 10px;
+}
