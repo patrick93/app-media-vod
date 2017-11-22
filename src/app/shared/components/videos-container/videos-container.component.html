@@ -1,0 +1,4 @@
+<div class="container">
+  <app-navbar [state]="state"></app-navbar>
+  <app-videos-list [movies]="movies" [state]="state" (onMovieClick)="onClick($event)"></app-videos-list>
+</div>
