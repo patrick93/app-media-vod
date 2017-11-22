@@ -1,3 +1,5 @@
+import { Movie } from './../../models/movie';
+import { COMPONENTS } from './../../models/components.enum';
 import { KEY_CODE } from './../../models/keyboard.enum';
 import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
 
@@ -7,18 +9,18 @@ import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@a
   styleUrls: ['./videos-container.component.css']
 })
 export class VideosContainerComponent implements OnInit {
-  @Input() movies: any[];
-  @Output() onMovieClick = new EventEmitter<any>();
+  @Input() movies: Movie[];
+  @Output() onMovieClick = new EventEmitter<Movie>();
 
   state: any = {
     selectedComponent: null,
     components: [
       {
-        type: 0,
+        type: COMPONENTS.NAVBAR,
         focusIndex: 0
       },
       {
-        type: 1,
+        type: COMPONENTS.VIDEOS_LIST,
         focusIndex: 0
       }
     ]

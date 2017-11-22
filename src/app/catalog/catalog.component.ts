@@ -1,3 +1,4 @@
+import { Movie } from './../shared/models/movie';
 import { Router } from '@angular/router';
 import { HistoryService } from './../shared/services/history.service';
 import { VideosService } from './../shared/services/videos.service';
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
-  movies: any[];
+  movies: Movie[];
 
   constructor(
     private videosService: VideosService,
@@ -19,13 +20,13 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit() {
     this.videosService.getVideos().subscribe(data => {
+      console.log(data);
       this.movies = data;
     });
   }
 
-  play(movie: any) {
+  play(movie: Movie) {
     this.historyService.addMovie(movie);
-    const { contents: [{ url: videoUrl }] } = movie;
-    this.router.navigate(['/play'], { queryParams: { url: videoUrl } });
+    this.router.navigate(['/play'], { queryParams: { url: movie.videoUrl } });
   }
 }

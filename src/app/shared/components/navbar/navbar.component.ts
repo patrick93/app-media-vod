@@ -1,3 +1,4 @@
+import { COMPONENTS } from './../../models/components.enum';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
   hasFocus(index: number) {
     const result = (index === (this.state.selectedComponent.focusIndex % 2));
-    return this.state.selectedComponent.type === 0 && result;
+    return this.state.selectedComponent.type === COMPONENTS.NAVBAR && result;
   }
 
 }

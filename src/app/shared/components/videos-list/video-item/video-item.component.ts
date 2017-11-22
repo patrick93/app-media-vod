@@ -1,3 +1,4 @@
+import { Movie } from './../../../models/movie';
 import {
   Component,
   OnInit,
@@ -17,15 +18,15 @@ import {
   styleUrls: ['./video-item.component.css']
 })
 export class VideoItemComponent implements OnInit {
-  @Input() movie: any;
+  @Input() movie: Movie;
   @Input() focus: boolean;
-  @Output() onMovieClick = new EventEmitter<any>();
+  @Output() onMovieClick = new EventEmitter<Movie>();
 
   constructor() {}
 
   ngOnInit() {}
 
-  play(movie: any): void {
+  play(movie: Movie): void {
     this.onMovieClick.emit(movie);
   }
 }

@@ -1,3 +1,4 @@
+import { Movie } from './../shared/models/movie';
 import { HistoryService } from '../shared/services/history.service';
 import { Router } from '@angular/router';
 import { Component, OnInit, HostListener } from '@angular/core';
@@ -8,7 +9,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  movies: any = [];
+  movies: Movie[] = [];
 
   constructor(private historyService: HistoryService, private router: Router) {
   }
@@ -17,8 +18,7 @@ export class HistoryComponent implements OnInit {
     this.movies = this.historyService.getMovies();
   }
 
-  play(movie: any): void {
-    const { contents: [{ url: videoUrl }] } = movie;
-    this.router.navigate(['/play'], { queryParams: { url: videoUrl } });
+  play(movie: Movie): void {
+    this.router.navigate(['/play'], { queryParams: { url: movie.videoUrl } });
   }
 }
