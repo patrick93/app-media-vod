@@ -1,6 +1,7 @@
 .list-inline {
   overflow: auto;
   white-space: nowrap;
+  padding: 10px;
 }
 
 .list-inline-item {
