@@ -14,7 +14,7 @@ export class HistoryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.movies = this.historyService.getHistory();
+    this.movies = this.historyService.getMovies();
   }
 
   play(movie: any): void {

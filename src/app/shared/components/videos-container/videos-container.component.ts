@@ -1,3 +1,4 @@
+import { KEY_CODE } from './../../models/keyboard.enum';
 import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -30,7 +31,7 @@ export class VideosContainerComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (event.keyCode === 37) {
+    if (event.keyCode === KEY_CODE.LEFT_ARROW) {
       event.preventDefault();
       this.state.selectedComponent.focusIndex -= 1;
       if (this.state.selectedComponent.focusIndex < 0) {
@@ -38,21 +39,19 @@ export class VideosContainerComponent implements OnInit {
       }
     }
 
-    if (event.keyCode === 38) {
+    if (event.keyCode === KEY_CODE.UP_ARROW) {
       event.preventDefault();
       [this.state.selectedComponent] = this.state.components;
-      console.log(this.state.selectedComponent);
     }
 
-    if (event.keyCode === 39) {
+    if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
       event.preventDefault();
       this.state.selectedComponent.focusIndex += 1;
     }
 
-    if (event.keyCode === 40) {
+    if (event.keyCode === KEY_CODE.DOWN_ARROW) {
       event.preventDefault();
       [, this.state.selectedComponent] = this.state.components;
-      console.log(this.state.selectedComponent);
     }
   }
 

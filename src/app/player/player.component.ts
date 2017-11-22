@@ -1,3 +1,4 @@
+import { KEY_CODE } from './../shared/models/keyboard.enum';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VgAPI, VgStates, VgFullscreenAPI } from 'videogular2/core';
@@ -23,7 +24,7 @@ export class PlayerComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (event.keyCode === 32) {
+    if (event.keyCode === KEY_CODE.SPACEBAR) {
       event.preventDefault();
       if (this.api.getDefaultMedia().state === VgStates.VG_PAUSED) {
         this.api.getDefaultMedia().play();
@@ -32,12 +33,12 @@ export class PlayerComponent implements OnInit {
       }
     }
 
-    if (event.keyCode === 121) {
+    if (event.keyCode === KEY_CODE.F10) {
       event.preventDefault();
       this.fullscreenApi.toggleFullscreen();
     }
 
-    if (event.keyCode === 119) {
+    if (event.keyCode === KEY_CODE.LEFT_ARROW) {
       event.preventDefault();
       console.log(this.api.volume);
       if (this.api.volume > 0) {
@@ -45,7 +46,7 @@ export class PlayerComponent implements OnInit {
       }
     }
 
-    if (event.keyCode === 120) {
+    if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
       event.preventDefault();
       if (this.api.volume < 1) {
         this.api.volume += 0.1;

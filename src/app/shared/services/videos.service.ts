@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -9,7 +10,7 @@ export class VideosService {
 
   getVideos(): Observable<any[]> {
     return this.http
-      .get('./assets/movies.json')
+      .get(environment.movies_path)
       .map((res: any) => res.json().entries);
   }
 }

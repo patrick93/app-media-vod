@@ -5,7 +5,7 @@ export class HistoryService {
 
   constructor() { }
 
-  getHistory(): any[] {
+  getMovies(): any[] {
     return Object.keys(localStorage).map(movieId => {
       const movie = localStorage.getItem(movieId);
       return JSON.parse(movie);
