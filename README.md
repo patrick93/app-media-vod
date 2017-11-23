@@ -1,27 +1,30 @@
 # AppMediaVod
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+This project is a simple Media VOD (Video On Demand).
 
-## Development server
+Demo: [https://patrick93.github.io/app-media-vod/](https://patrick93.github.io/app-media-vod/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Keyboard Navigation
 
-## Code scaffolding
+### Videos List
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Right Arrow - Move the focus to the right
+* Left Arrow - Move the focus to the left
+* Up Arrow - Move the focus to the navbar
+* Down Arrow - Move the focus to the video list
+* Enter - Select the link
 
-## Build
+### Player
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* Spacebar - Play/Pause the video
+* F10 - Toggle fullscreen
+* Left Arrow - Turn down the volume
+* Right Arrow - Turn up the volume
 
-## Running unit tests
+## Running
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm install` to install the dependencies.
 
-## Running end-to-end tests
+Run `npm start` to start the app.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Navigate to `http://localhost:4200/`.
